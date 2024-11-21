@@ -714,6 +714,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cell: {fileID: 4843963052481802772}
+  Type: 0
+  Count: 0
 --- !u!1 &1084948609197819431
 GameObject:
   m_ObjectHideFlags: 0
@@ -1158,6 +1160,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inventoryPanel: {fileID: 0}
+  _craft: {fileID: 3405624145175993478}
+  _itemAvatar: {fileID: 21300000, guid: 74c01a2afcb9c4543b079c5ea9b362eb, type: 3}
   ItemType: 0
   CountText: {fileID: 6055357995496396885}
   AvatarItem: {fileID: 2210940173254559977}
@@ -1332,6 +1336,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cell: {fileID: 6189879317273860483}
+  Type: 0
+  Count: 0
 --- !u!1 &2548029262471060550
 GameObject:
   m_ObjectHideFlags: 0
@@ -1466,7 +1472,6 @@ MonoBehaviour:
   - {fileID: 6150238911047361574}
   - {fileID: 4495204396488577765}
   _craftItem: {fileID: 3763454887548372810}
-  _refactoring: {fileID: 21300000, guid: 74c01a2afcb9c4543b079c5ea9b362eb, type: 3}
 --- !u!1 &3108916665636759022
 GameObject:
   m_ObjectHideFlags: 0
@@ -1582,6 +1587,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cell: {fileID: 3213147807759344746}
+  Type: 0
+  Count: 0
 --- !u!1 &3526378140835876972
 GameObject:
   m_ObjectHideFlags: 0
@@ -1965,6 +1972,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cell: {fileID: 206287034682625624}
+  Type: 0
+  Count: 0
 --- !u!1 &4685594018277906793
 GameObject:
   m_ObjectHideFlags: 0
@@ -2289,6 +2298,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cell: {fileID: 8268049803206546378}
+  Type: 0
+  Count: 0
 --- !u!1 &5496527891738331731
 GameObject:
   m_ObjectHideFlags: 0
@@ -2832,6 +2843,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cell: {fileID: 6137878747797860469}
+  Type: 0
+  Count: 0
 --- !u!1 &6640047377062234787
 GameObject:
   m_ObjectHideFlags: 0
@@ -3058,6 +3071,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cell: {fileID: 5504773488094323030}
+  Type: 0
+  Count: 0
 --- !u!1 &7532395472526132326
 GameObject:
   m_ObjectHideFlags: 0
@@ -3789,6 +3804,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cell: {fileID: 7124056310930542126}
+  Type: 0
+  Count: 0
 --- !u!1 &8932066852397733379
 GameObject:
   m_ObjectHideFlags: 0
