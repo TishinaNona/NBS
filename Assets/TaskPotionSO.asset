@@ -18,31 +18,43 @@ MonoBehaviour:
     - ItemTypeEnum: 4
       DescriptionItem: 1
       AvatarItem: {fileID: 21300000, guid: a9f3ab25acadbbe40892e0d3cc25918d, type: 3}
+      Count: 1
     - ItemTypeEnum: 7
       DescriptionItem: 1
       AvatarItem: {fileID: 21300000, guid: b7f77607c82ea4142a2070c0e37e1756, type: 3}
+      Count: 1
     - ItemTypeEnum: 11
       DescriptionItem: 1
       AvatarItem: {fileID: 21300000, guid: 44dc65116207f4b46aa85443dae5ad96, type: 3}
+      Count: 1
+    TaskIndex: 0
   - PotionTaskEnum: 1
     listTasks:
     - ItemTypeEnum: 5
       DescriptionItem: 1
       AvatarItem: {fileID: 21300000, guid: 0f2e408d2f6635d449a00c01e0312efc, type: 3}
+      Count: 1
     - ItemTypeEnum: 7
-      DescriptionItem: 1
+      DescriptionItem: 2
       AvatarItem: {fileID: 21300000, guid: b7f77607c82ea4142a2070c0e37e1756, type: 3}
+      Count: 2
     - ItemTypeEnum: 11
       DescriptionItem: 1
       AvatarItem: {fileID: 21300000, guid: 44dc65116207f4b46aa85443dae5ad96, type: 3}
+      Count: 1
+    TaskIndex: 1
   - PotionTaskEnum: 2
     listTasks:
     - ItemTypeEnum: 6
       DescriptionItem: 1
       AvatarItem: {fileID: 21300000, guid: 0bf427997cb4ec340827fbc02cb39017, type: 3}
+      Count: 1
     - ItemTypeEnum: 7
       DescriptionItem: 1
       AvatarItem: {fileID: 21300000, guid: b7f77607c82ea4142a2070c0e37e1756, type: 3}
+      Count: 3
     - ItemTypeEnum: 11
       DescriptionItem: 1
       AvatarItem: {fileID: 21300000, guid: 44dc65116207f4b46aa85443dae5ad96, type: 3}
+      Count: 1
+    TaskIndex: 2

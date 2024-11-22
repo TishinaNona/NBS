@@ -4064,8 +4064,8 @@ MonoBehaviour:
   - {fileID: 8463677354113510100}
   - {fileID: 5576554999422063174}
   - {fileID: 6737712116447361424}
-  _load: {fileID: 0}
-  _test: {fileID: 0}
+  _testLoad: {fileID: 0}
+  _testSave: {fileID: 0}
   CurrentData:
     CellIndex: 0
     Type: 0

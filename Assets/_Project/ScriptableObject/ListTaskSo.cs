@@ -5,4 +5,5 @@ using UnityEngine;
 public class ListTaskSo : ScriptableObject
 {
     public List<ListTask> listTasks;
+
 }

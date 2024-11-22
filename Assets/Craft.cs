@@ -33,14 +33,12 @@ namespace Inventory
                         receipt.isCraft = false;
 
                         break;
-                    }
-                    Debug.Log(dataCell);
-
+                    } 
                     
                     if (receipt.isCraft == true && dataCell != null)
                     {
-                        
                         SetProperties(receipt.ItemPotionType, receipt.Count.ToString(), receipt.AvatarItem);
+                        
                     }
 
                     receipt.isCraft = true;

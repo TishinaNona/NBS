@@ -9,8 +9,8 @@ namespace Inventory
     public class InventoryPanel : MonoBehaviour
     {
         [SerializeField] private List<InventoryCell> _inventoryCells = new();
-        [SerializeField] private Button _load;
-        [SerializeField] private Button _test;
+        [SerializeField] private Button _testLoad;
+        [SerializeField] private Button _testSave;
 
         public InventoryCellData CurrentData;
 
@@ -61,15 +61,28 @@ namespace Inventory
                     firstEmptyCell = inventoryCell;
                     Save();
                 }
-            }
 
-            if (firstEmptyCell != null)
-            {
-                firstEmptyCell.AddNewItem(itemTypeEnum, count, icon);
-                Save();
-                return;
+                if (firstEmptyCell != null)
+                {
+                    firstEmptyCell.AddNewItem(itemTypeEnum, count, icon);
+                    Save();
+                    return;
+                }
             }
+             
             //TODO: Если некуда впихнуть что то сделать
+        }
+
+        public void RemoveItem(ItemTypeEnum itemTypeEnum, int count)
+        {
+            if (count == 1)
+            {
+                count--;
+            }
+            if (count > 1)
+            {
+
+            }
         }
 
         private void Save()

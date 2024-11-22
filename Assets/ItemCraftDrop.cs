@@ -19,7 +19,7 @@ public class ItemCraftDrop : MonoBehaviour
             int Count = int.Parse(CountText.text);
             _inventoryPanel.AddItem(ItemType, Count, AvatarItem.sprite);
             _craft.SetProperties(ItemTypeEnum.None, " ", _itemAvatar);
-
+            
         }
     }
 

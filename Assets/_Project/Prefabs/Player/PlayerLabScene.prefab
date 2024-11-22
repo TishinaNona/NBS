@@ -796,7 +796,7 @@ MonoBehaviour:
     FieldOfView: 50
     OrthographicSize: 10
     NearClipPlane: 0.1
-    FarClipPlane: 2000
+    FarClipPlane: 70
     Dutch: 0
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
@@ -904,7 +904,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2087419639801611211}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.035646174, y: -0.000000017195443, z: 6.1334154e-10, w: 0.9993645}
+  m_LocalRotation: {x: 0.03564615, y: 0.000000017195454, z: -6.1334143e-10, w: 0.9993645}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -943,7 +943,7 @@ MonoBehaviour:
     FieldOfView: 50
     OrthographicSize: 10
     NearClipPlane: 0.1
-    FarClipPlane: 2000
+    FarClipPlane: 70
     Dutch: 0
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
@@ -2339,7 +2339,7 @@ MonoBehaviour:
     FieldOfView: 50
     OrthographicSize: 10
     NearClipPlane: 0.1
-    FarClipPlane: 2000
+    FarClipPlane: 70
     Dutch: 0
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
@@ -2698,7 +2698,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6113431704361763594}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.014281362, y: -0.000000034409247, z: -4.9146104e-10, w: 0.999898}
+  m_LocalRotation: {x: -0.014281402, y: 0.00000003442185, z: 4.916424e-10, w: 0.999898}
   m_LocalPosition: {x: 0.009999999, y: 1.57, z: -7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2738,7 +2738,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 2000
+  far clip plane: 70
   field of view: 50
   orthographic: 0
   orthographic size: 10
@@ -3809,7 +3809,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8155625871020869277}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.014281372, y: -0.000000017204624, z: -2.457307e-10, w: 0.999898}
+  m_LocalRotation: {x: -0.014281392, y: 0.000000017204627, z: 2.4573113e-10, w: 0.999898}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3848,7 +3848,7 @@ MonoBehaviour:
     FieldOfView: 50
     OrthographicSize: 10
     NearClipPlane: 0.1
-    FarClipPlane: 2000
+    FarClipPlane: 70
     Dutch: 0
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
