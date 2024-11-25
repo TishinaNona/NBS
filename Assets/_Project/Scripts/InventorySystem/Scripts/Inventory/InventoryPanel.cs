@@ -11,8 +11,9 @@ namespace Inventory
         [SerializeField] private List<InventoryCell> _inventoryCells = new();
         [SerializeField] private Button _testLoad;
         [SerializeField] private Button _testSave;
+        private InventoryCellData CurrentData;
 
-        public InventoryCellData CurrentData;
+        
 
         private void Awake()
         {
@@ -75,24 +76,41 @@ namespace Inventory
 
         public void RemoveItem(ItemTypeEnum itemTypeEnum, int count)
         {
-            if (count == 1)
+            foreach (var inventoryCell in _inventoryCells)
             {
-                count--;
-            }
-            if (count > 1)
-            {
-
+                if (inventoryCell.CurrentData.Type == itemTypeEnum && inventoryCell.CurrentData.Count > count)
+                { 
+                    inventoryCell.RemoveCountItem(count);
+                    Debug.Log("Успех, минус");
+                    Save();
+                    return;
+                }
+                if (inventoryCell.CurrentData.Type == itemTypeEnum && inventoryCell.CurrentData.Count <= count)
+                {
+                    Debug.Log("Мало");
+                    return;
+                }
+                if (inventoryCell.CurrentData.Type == itemTypeEnum && inventoryCell.CurrentData.Count == count)
+                {
+                    inventoryCell.CurrentData.Type = ItemTypeEnum.None;
+                    inventoryCell.CurrentData.Count = 0;
+                    inventoryCell.CurrentData.AvatarItem = null;    
+                }
             }
         }
 
-        private void Save()
+        public void Save()
         {
-            for (int i = 0; i < _inventoryCells.Count; i++)
+            if (_inventoryCells != null)
             {
-                SaveCells(i);
-            }
+                for (int i = 0; i < _inventoryCells.Count; i++)
+                {
+                    SaveCells(i);
+                }
 
-            DataCentralService.Instance.SaveStates();      
+               
+            }
+            DataCentralService.Instance.SaveStates();
         }
 
         public void SaveCells(int id)

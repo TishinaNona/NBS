@@ -43,6 +43,12 @@ namespace Inventory
             DataCentralService.Instance.InventoryStates.UpdateCellData(CurrentData);
             ReDraw();
         }
+        public void RemoveCountItem(int count)
+        {
+            CurrentData.Count -= count;
+            DataCentralService.Instance.InventoryStates.UpdateCellData(CurrentData);
+            ReDraw();
+        }
 
         private void ReDraw()
         {

@@ -12,6 +12,8 @@ namespace Inventory
         public ItemTypeEnum Type; //{ get; private set; }
         public int Count; //{ get; private set; }
 
+        [SerializeField] private InventoryPanel _inventoryPanel;
+
         public void OnDrop(PointerEventData eventData)
         {
             GameObject dropped = eventData.pointerDrag;
@@ -26,6 +28,8 @@ namespace Inventory
             ff.CurrentData.CellIndex = a;
             currentDraggable.transform.SetParent(draggableItem.parentAfterDrag);
             draggableItem.parentAfterDrag = transform;
+
+            _inventoryPanel.Save();
         }
 
         private void Update()
