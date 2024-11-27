@@ -1,4 +1,5 @@
-﻿using Inventory;
+﻿using Data;
+using Data.Inventory;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -6,42 +7,48 @@ namespace Inventory
 {
     public class InventorySlot : MonoBehaviour, IDropHandler
     {
-        [SerializeField] private InventoryCell cell;
-        private int a;
-
-        public ItemTypeEnum Type; //{ get; private set; }
-        public int Count; //{ get; private set; }
-
         [SerializeField] private InventoryPanel _inventoryPanel;
+        [SerializeField] private InventoryCell _cell;
+        public InventoryCellData CurrentData;
 
+        private int _cellIndex;
+
+        public ItemTypeEnum Type { get; private set; }
+        public int Count { get; private set; }
+        public Sprite Sprite { get; private set; }
+        
+        
         public void OnDrop(PointerEventData eventData)
         {
-            GameObject dropped = eventData.pointerDrag;
-            DragItem draggableItem = dropped.GetComponent<DragItem>();
-            InventoryCell f = dropped.GetComponent<InventoryCell>();
+            var dropped = eventData.pointerDrag;
+            var draggableItem = dropped.GetComponent<DragItem>();
+            var FirstitemDroppedCellIndex = dropped.GetComponent<InventoryCell>();
+             
+            var current = transform.GetChild(0).gameObject;
+            var currentDraggable = current.GetComponent<DragItem>();
+            var SeconditemDroppedCellIndex = currentDraggable.GetComponent<InventoryCell>();
+             
+            _cellIndex = FirstitemDroppedCellIndex.CurrentData.CellIndex;
+            FirstitemDroppedCellIndex.CurrentData.CellIndex = SeconditemDroppedCellIndex.CurrentData.CellIndex;
+            SeconditemDroppedCellIndex.CurrentData.CellIndex = _cellIndex;
 
-            GameObject current = transform.GetChild(0).gameObject;
-            DragItem currentDraggable = current.GetComponent<DragItem>();
-            InventoryCell ff = currentDraggable.GetComponent<InventoryCell>();
-            a = f.CurrentData.CellIndex;
-            f.CurrentData.CellIndex = ff.CurrentData.CellIndex;
-            ff.CurrentData.CellIndex = a;
             currentDraggable.transform.SetParent(draggableItem.parentAfterDrag);
             draggableItem.parentAfterDrag = transform;
 
-            _inventoryPanel.Save();
+
+             _inventoryPanel.Save();
+            
         }
 
         private void Update()
         {
-            cell = GetComponentInChildren<InventoryCell>();
-            if (cell != null)
+            _cell = GetComponentInChildren<InventoryCell>();
+            if (_cell != null )
             {
-                Count = cell.CurrentData.Count;
-                Type = cell.CurrentData.Type;
-            }
-           
-            
+                Count = _cell.CurrentData.Count;
+                Type = _cell.CurrentData.Type;
+                Sprite = _cell.CurrentData.AvatarItem;
+            }  
         }
-    }
+    } 
 }

@@ -12,6 +12,8 @@ public class ItemCraftDrop : MonoBehaviour
     public TMP_Text CountText;
     public Image AvatarItem;
 
+    public bool isBTM_Active = false;
+
     public void BTM_TakeItem()
     {
         if (ItemType != ItemTypeEnum.None)
@@ -19,7 +21,8 @@ public class ItemCraftDrop : MonoBehaviour
             int Count = int.Parse(CountText.text);
             _inventoryPanel.AddItem(ItemType, Count, AvatarItem.sprite);
             _craft.SetProperties(ItemTypeEnum.None, " ", _itemAvatar);
-            
+
+            isBTM_Active = true;
         }
     }
 

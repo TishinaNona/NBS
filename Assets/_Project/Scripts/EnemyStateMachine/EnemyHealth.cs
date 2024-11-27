@@ -33,6 +33,8 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
+    
+
     private void SpawnDrop()
     {
         if (IsDead == true && _spawn == true)

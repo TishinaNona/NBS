@@ -50,12 +50,12 @@ namespace Inventory
             ReDraw();
         }
 
-        private void ReDraw()
+        public void ReDraw()
         {
             if (CurrentData.Type == ItemTypeEnum.None)
             {
                 //_name.text = "";
-                _count.text = "";
+                _count.text = " "; 
             }
             else
             {

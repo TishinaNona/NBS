@@ -70,7 +70,7 @@ MonoBehaviour:
   maxEnemyHealth: 100
   currentHealth: 0
   _drop: {fileID: 2098148172029345527, guid: 9d3f7296941dc1d4bba643b9e7640ba2, type: 3}
-  _spawnDrop: {fileID: 101446966156362660}
+  _spawnDrop: {fileID: 3937918893118951677}
 --- !u!114 &7630802468105871953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,12 +337,6 @@ PrefabInstance:
       addedObject: {fileID: 7993731074135418610}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b5886aff852796409f2e2e6c4e4e139, type: 3}
---- !u!4 &101446966156362660 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 780033383772031164, guid: 4b5886aff852796409f2e2e6c4e4e139,
-    type: 3}
-  m_PrefabInstance: {fileID: 845363091614403352}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2051179171788657622 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1714769568813258958, guid: 4b5886aff852796409f2e2e6c4e4e139,

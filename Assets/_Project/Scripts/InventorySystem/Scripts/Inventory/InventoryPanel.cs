@@ -2,34 +2,21 @@
 using Data.Inventory;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Inventory
 {
     public class InventoryPanel : MonoBehaviour
     {
         [SerializeField] private List<InventoryCell> _inventoryCells = new();
-        [SerializeField] private Button _testLoad;
-        [SerializeField] private Button _testSave;
-        private InventoryCellData CurrentData;
 
-        
+        public Sprite Sprite;
 
+       // public InventoryCell _inventoryCell;
         private void Awake()
         {
             InitInventoryCell();
         }
-
-        public void BTM_Save()
-        {
-            Save();
-        }
-
-        public void BTM_Load()
-        {
-            OnLoad();
-        }
-
+         
         public void InitInventoryCell()
         {
             for (int i = 0; i < _inventoryCells.Count; i++)
@@ -43,34 +30,35 @@ namespace Inventory
             OnLoad();
             Save();
         }
-
+         
         public void AddItem(ItemTypeEnum itemTypeEnum, int count, Sprite icon)
         {
             InventoryCell firstEmptyCell = null;
 
             foreach (var inventoryCell in _inventoryCells)
             {
-                if (inventoryCell.CurrentData.Type == itemTypeEnum)
-                {
-                    inventoryCell.AddCountItem(count);
-                    Save();
-                    return;
-                }
-
                 if (firstEmptyCell == null && inventoryCell.CurrentData.Type == ItemTypeEnum.None)
                 {
                     firstEmptyCell = inventoryCell;
-                    Save();
+                    Save(); 
                 }
 
                 if (firstEmptyCell != null)
                 {
                     firstEmptyCell.AddNewItem(itemTypeEnum, count, icon);
-                    Save();
+                    Save(); 
                     return;
                 }
-            }
-             
+
+                if (inventoryCell.CurrentData.Type == itemTypeEnum)
+                {
+                    inventoryCell.AddCountItem(count);
+                    Save(); 
+                    return;
+                }
+                
+            } 
+
             //TODO: Если некуда впихнуть что то сделать
         }
 
@@ -78,25 +66,30 @@ namespace Inventory
         {
             foreach (var inventoryCell in _inventoryCells)
             {
-                if (inventoryCell.CurrentData.Type == itemTypeEnum && inventoryCell.CurrentData.Count > count)
+                if (inventoryCell.CurrentData.Type == itemTypeEnum)
                 { 
-                    inventoryCell.RemoveCountItem(count);
-                    Debug.Log("Успех, минус");
-                    Save();
-                    return;
-                }
-                if (inventoryCell.CurrentData.Type == itemTypeEnum && inventoryCell.CurrentData.Count <= count)
-                {
-                    Debug.Log("Мало");
-                    return;
-                }
-                if (inventoryCell.CurrentData.Type == itemTypeEnum && inventoryCell.CurrentData.Count == count)
-                {
-                    inventoryCell.CurrentData.Type = ItemTypeEnum.None;
-                    inventoryCell.CurrentData.Count = 0;
-                    inventoryCell.CurrentData.AvatarItem = null;    
-                }
-            }
+                    if (inventoryCell.CurrentData.Count == count)
+                    {
+                        inventoryCell.CurrentData.Type = ItemTypeEnum.None;
+                        inventoryCell.CurrentData.Count = 0;
+                        inventoryCell.CurrentData.AvatarItem = Sprite; 
+                        Save(); 
+                        return;
+                    }
+
+                    if (inventoryCell.CurrentData.Count > count)
+                    {
+                        inventoryCell.RemoveCountItem(count);
+                        Save(); 
+                    }
+
+                    if (inventoryCell.CurrentData.Count <= count)
+                    {
+                        Debug.Log("Не успешно");
+                        return;
+                    }
+                }  
+            } 
         }
 
         public void Save()
@@ -105,12 +98,11 @@ namespace Inventory
             {
                 for (int i = 0; i < _inventoryCells.Count; i++)
                 {
-                    SaveCells(i);
-                }
-
-               
-            }
+                    SaveCells(i); 
+                } 
+            } 
             DataCentralService.Instance.SaveStates();
+            DataCentralService.Instance.LoadStates();
         }
 
         public void SaveCells(int id)
@@ -122,7 +114,7 @@ namespace Inventory
             DataCentralService.Instance.InventoryStates.UpdateCellData(data);
         }
 
-        private void OnLoad()
+        public void OnLoad()
         {
             foreach (InventoryCell inventoryCell in _inventoryCells)
             {
